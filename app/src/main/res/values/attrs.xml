@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ClockView">
+        <attr name="CircleColor" format="color"/>
+        <attr name="CircleWidth" format="dimension"/>
+        <attr name="ScaleColor" format="color"/>
+        <attr name="ScaleWidth" format="dimension"/>
+        <attr name="ScaleLength" format="dimension"/>
+        <attr name="HourPtrColor" format="color"/>
+        <attr name="MinPtrColor" format="color"/>
+        <attr name="SecPtrColor" format="color"/>
+        <attr name="LogoText" format="string"/>
+        <attr name="LogoTextDistance" format="dimension"/>
+    </declare-styleable>
+</resources>
