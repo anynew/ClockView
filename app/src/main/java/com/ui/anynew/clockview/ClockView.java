@@ -350,7 +350,7 @@ public class ClockView extends View {
             public void onAnimationUpdate(ValueAnimator animation) {
                 progress_sec = (float) animation.getAnimatedValue();
                 postInvalidate();
-//                Log.e("progress", "onAnimationUpdate: " + progress);
+//                 Log.e("progress", "onAnimationUpdate: " + progress);
             }
         });
         mSecondAnim.start();
