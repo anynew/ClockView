@@ -13,7 +13,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
         android:padding="10dp"
-        app:LogoText="Custom"
+        app:LogoText="Anynew"
         app:LogoTextDistance="30dp"
         app:CircleColor="@color/colorAccent"
         app:CircleWidth="2dp"

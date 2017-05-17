@@ -13,6 +13,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PathMeasure;
 import android.graphics.RectF;
+import android.graphics.Shader;
 import android.graphics.SweepGradient;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -186,23 +187,23 @@ public class ClockView extends View {
         mSecPtrPaint.setAntiAlias(true);
         mSecPtrPaint.setColor(mSecPtrColor);
         mSecPtrPaint.setStyle(Paint.Style.STROKE);
-        mSecPtrPaint.setStrokeWidth(3);
+        mSecPtrPaint.setStrokeWidth(7);
+        mSecPtrPaint.setStrokeCap(Paint.Cap.ROUND);
         mSecPtrPaint.setMaskFilter(bmf);
-
 
         mMinPtrPaint.setAntiAlias(true);
         mMinPtrPaint.setColor(mMinPtrColor);
         mMinPtrPaint.setStyle(Paint.Style.STROKE);
-        mMinPtrPaint.setStrokeWidth(6);
+        mMinPtrPaint.setStrokeWidth(9);
+        mMinPtrPaint.setStrokeCap(Paint.Cap.ROUND);
         mMinPtrPaint.setMaskFilter(bmf);
 
-
         mHorPtrPaint.setAntiAlias(true);
+        mHorPtrPaint.setStrokeCap(Paint.Cap.ROUND);
         mHorPtrPaint.setColor(mHorPtrColor);
         mHorPtrPaint.setStyle(Paint.Style.STROKE);
-        mHorPtrPaint.setStrokeWidth(6);
+        mHorPtrPaint.setStrokeWidth(13);
         mHorPtrPaint.setMaskFilter(bmf);
-
 
         txPaint = new Paint();
         txPaint.setAntiAlias(true);
@@ -244,10 +245,11 @@ public class ClockView extends View {
         drawBackgroundImage(canvas);
 
         float minDistance = 80;
+        float scaleDis = 4/2;
         //确定表盘区域
         final RectF rectF =  new RectF(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), getHeight() - getPaddingBottom());
         final RectF rectFmin = new RectF(getPaddingLeft()+ minDistance, getPaddingTop()+minDistance, getWidth() - getPaddingRight()-minDistance, getHeight() - getPaddingBottom()-minDistance);
-        final RectF rectFhour = new RectF(getPaddingLeft()+ minDistance*3/2, getPaddingTop()+minDistance*3/2, getWidth() - getPaddingRight()-minDistance*3/2, getHeight() - getPaddingBottom()-minDistance*3/2);
+        final RectF rectFhour = new RectF(getPaddingLeft()+ minDistance*scaleDis, getPaddingTop()+minDistance*scaleDis, getWidth() - getPaddingRight()-minDistance*scaleDis, getHeight() - getPaddingBottom()-minDistance*scaleDis);
 //        canvas.drawArc(rectF, 0, 360, false, mCirclePaint);
         canvas.save();
         //大刻度绘制 分成12等份
